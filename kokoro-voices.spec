@@ -1,138 +1,75 @@
 Name:		kokoro-voices
 Version:	1.0
 Release:	1
-Summary:	Official Kokoro-82M voice packs
-License:	Apache-2.0
-Group:		System/Multimedia
+Summary:	All official Kokoro voices
 URL:		https://huggingface.co/hexgrad/Kokoro-82M
-# voices/*.pt only. The checkpoint is kokoro-model.
-Source0:	%{name}-%{version}.tar.xz
+License:	Apache-2.0
 BuildArch:	noarch
-Requires:	%{name}-en = %{EVRD}
-Requires:	%{name}-es = %{EVRD}
-Requires:	%{name}-fr = %{EVRD}
-Requires:	%{name}-hi = %{EVRD}
-Requires:	%{name}-it = %{EVRD}
-Requires:	%{name}-pt = %{EVRD}
-Requires:	%{name}-ja = %{EVRD}
-Requires:	%{name}-zh = %{EVRD}
+Group:		System/Multimedia
+Requires:	kokoro-voice-af_alloy
+Requires:	kokoro-voice-af_aoede
+Requires:	kokoro-voice-af_bella
+Requires:	kokoro-voice-af_heart
+Requires:	kokoro-voice-af_jessica
+Requires:	kokoro-voice-af_kore
+Requires:	kokoro-voice-af_nicole
+Requires:	kokoro-voice-af_nova
+Requires:	kokoro-voice-af_river
+Requires:	kokoro-voice-af_sarah
+Requires:	kokoro-voice-af_sky
+Requires:	kokoro-voice-am_adam
+Requires:	kokoro-voice-am_echo
+Requires:	kokoro-voice-am_eric
+Requires:	kokoro-voice-am_fenrir
+Requires:	kokoro-voice-am_liam
+Requires:	kokoro-voice-am_michael
+Requires:	kokoro-voice-am_onyx
+Requires:	kokoro-voice-am_puck
+Requires:	kokoro-voice-am_santa
+Requires:	kokoro-voice-bf_alice
+Requires:	kokoro-voice-bf_emma
+Requires:	kokoro-voice-bf_isabella
+Requires:	kokoro-voice-bf_lily
+Requires:	kokoro-voice-bm_daniel
+Requires:	kokoro-voice-bm_fable
+Requires:	kokoro-voice-bm_george
+Requires:	kokoro-voice-bm_lewis
+Requires:	kokoro-voice-ef_dora
+Requires:	kokoro-voice-em_alex
+Requires:	kokoro-voice-em_santa
+Requires:	kokoro-voice-ff_siwis
+Requires:	kokoro-voice-hf_alpha
+Requires:	kokoro-voice-hf_beta
+Requires:	kokoro-voice-hm_omega
+Requires:	kokoro-voice-hm_psi
+Requires:	kokoro-voice-if_sara
+Requires:	kokoro-voice-im_nicola
+Requires:	kokoro-voice-jf_alpha
+Requires:	kokoro-voice-jf_gongitsune
+Requires:	kokoro-voice-jf_nezumi
+Requires:	kokoro-voice-jf_tebukuro
+Requires:	kokoro-voice-jm_kumo
+Requires:	kokoro-voice-pf_dora
+Requires:	kokoro-voice-pm_alex
+Requires:	kokoro-voice-pm_santa
+Requires:	kokoro-voice-zf_xiaobei
+Requires:	kokoro-voice-zf_xiaoni
+Requires:	kokoro-voice-zf_xiaoxiao
+Requires:	kokoro-voice-zf_xiaoyi
+Requires:	kokoro-voice-zm_yunjian
+Requires:	kokoro-voice-zm_yunxi
+Requires:	kokoro-voice-zm_yunxia
+Requires:	kokoro-voice-zm_yunyang
 
 %description
-All official Kokoro-82M voice packs: English, Spanish, French, Hindi,
-Italian, Brazilian Portuguese, Japanese and Mandarin. Each language
-can also be installed on its own. The shared checkpoint is kokoro-model.
-
-%package -n %{name}-en
-Summary:	English voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-en
-American and British English Kokoro voices. Pronunciation uses the
-misaki English lexicon. spaCy is not required.
-
-%package -n %{name}-es
-Summary:	Spanish voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-es
-Spanish Kokoro voices. Pronunciation uses espeak-ng.
-
-%package -n %{name}-fr
-Summary:	French voice for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-fr
-French Kokoro voice. Pronunciation uses espeak-ng.
-
-%package -n %{name}-hi
-Summary:	Hindi voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-hi
-Hindi Kokoro voices. Pronunciation uses espeak-ng.
-
-%package -n %{name}-it
-Summary:	Italian voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-it
-Italian Kokoro voices. Pronunciation uses espeak-ng.
-
-%package -n %{name}-pt
-Summary:	Brazilian Portuguese voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-pt
-Brazilian Portuguese Kokoro voices. Pronunciation uses espeak-ng.
-
-%package -n %{name}-ja
-Summary:	Japanese voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-ja
-Japanese Kokoro voice packs. The weights are installed. Japanese
-grapheme-to-phoneme support is not part of python-misaki yet, so
-synthesis with these voices stops until that support is packaged.
-
-%package -n %{name}-zh
-Summary:	Mandarin voices for Kokoro
-Group:		System/Multimedia
-Requires:	kokoro-model >= 1.0
-Requires:	python-kokoro >= 0.9.4
-
-%description -n %{name}-zh
-Mandarin Kokoro voice packs for the Kokoro-82M checkpoint. The weights
-are installed. Mandarin grapheme-to-phoneme support is not part of
-python-misaki yet, so synthesis with these voices stops until that
-support is packaged.
-
-%prep
-%setup -q
-
-%build
+Metapackage that installs every official Kokoro-82M voice.
+Each voice is also available on its own as kokoro-voice-*.
+Those voices use the checkpoint in kokoro-model.
+The German Thorsten fine-tune is kokoro-voice-thorsten and is not included here.
 
 %install
-mkdir -p %{buildroot}%{_datadir}/kokoro/voices
-install -m 644 voices/*.pt %{buildroot}%{_datadir}/kokoro/voices/
+mkdir -p %{buildroot}
+echo 'Each voice is a separate kokoro-voice-* package.' > README-voices
 
 %files
-%doc VOICES.md
-
-%files -n %{name}-en
-%{_datadir}/kokoro/voices/a*.pt
-%{_datadir}/kokoro/voices/b*.pt
-
-%files -n %{name}-es
-%{_datadir}/kokoro/voices/e*.pt
-
-%files -n %{name}-fr
-%{_datadir}/kokoro/voices/f*.pt
-
-%files -n %{name}-hi
-%{_datadir}/kokoro/voices/h*.pt
-
-%files -n %{name}-it
-%{_datadir}/kokoro/voices/i*.pt
-
-%files -n %{name}-ja
-%{_datadir}/kokoro/voices/j*.pt
-
-%files -n %{name}-pt
-%{_datadir}/kokoro/voices/p*.pt
-
-%files -n %{name}-zh
-%{_datadir}/kokoro/voices/z*.pt
+%doc README-voices
